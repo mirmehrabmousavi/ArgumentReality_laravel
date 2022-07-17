@@ -128,6 +128,15 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a href="{{route('admin.file-manager')}}" class="nav-link">
+                            <i class="nav-icon fa fa-dollar"></i>
+                            <p>
+                                مدیریت فایل
+                                <span class="right badge badge-danger">جدید</span>
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{{ route('logout') }}"
                            onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

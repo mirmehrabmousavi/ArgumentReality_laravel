@@ -15,4 +15,9 @@ class AdminController extends Controller
     {
         return view('admin.home');
     }
+
+    public function fileManager()
+    {
+        return view('admin.file-manager');
+    }
 }

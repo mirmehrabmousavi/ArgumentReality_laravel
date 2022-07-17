@@ -52,5 +52,6 @@ Route::group(['prefix' => 'admin', ['middleware' => 'admin']], function () {
     Route::delete('category/delete/{id}', [\App\Http\Controllers\Admin\CategoryController::class, 'deleteCategory'])->name('admin.deleteCategory');
     //Pays
     Route::get('pays', [\App\Http\Controllers\HomeController::class, 'pay'])->name('admin.pays');
+    //FileManager
+    Route::get('file-manager', [\App\Http\Controllers\Admin\AdminController::class, 'fileManager'])->name('admin.file-manager');
 });
-

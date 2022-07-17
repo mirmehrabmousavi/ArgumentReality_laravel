@@ -39,22 +39,8 @@ class ProductController extends Controller
         $pro->title = $request->title;
         $pro->category_id = $request->category_id;
         $pro->price = $request->price;
-        if ($request->file('pic') && !empty($request->file('pic'))) {
-            $file = $request->file('pic');
-            @unlink(public_path('upload/product/' . $request->file('pic')));
-            $filename1 = date('YmdHi') . $file->getClientOriginalName();
-            $file->move(public_path('upload/product'), $filename1);
-            $pic = '/upload/product/' . $filename1;
-        }
-        if ($request->file('file') && !empty($request->file('file'))) {
-            $file = $request->file('file');
-            @unlink(public_path('upload/product/file/' . $request->file('file')));
-            $filename = date('YmdHi') . $file->getClientOriginalName();
-            $file->move(public_path('upload/product/file'), $filename);
-            $file = '/upload/product/file/' . $filename;
-        }
-        $pro->pic = $pic;
-        $pro->file = $file;
+        $pro->pic = $request->pic;
+        $pro->file = $request->file;
         $pro->time = $request->time;
         $pro->desc = $request->desc;
         $pro->save();
@@ -87,30 +73,10 @@ class ProductController extends Controller
         $pro->title = $request->title;
         $pro->category_id = $request->category_id;
         $pro->price = $request->price;
-        if ($request->file('pic') == null) {
-            $pro->pic = $pro->pic;
-        }else{
-            if ($request->file('pic') && !empty($request->file('pic'))) {
-                $file = $request->file('pic');
-                @unlink(public_path('upload/product/' . $request->file('pic')));
-                $filename1 = date('YmdHi') . $file->getClientOriginalName();
-                $file->move(public_path('upload/product'), $filename1);
-                $pic = '/upload/product/' . $filename1;
-            }
-            $pro->pic = $pic;
-        }
-        if ($request->file('file') == null) {
-            $pro->file = $pro->file;
-        }else{
-            if ($request->file('file') && !empty($request->file('file'))) {
-                $file = $request->file('file');
-                @unlink(public_path('upload/product/file/' . $request->file('file')));
-                $filename = date('YmdHi') . $file->getClientOriginalName();
-                $file->move(public_path('upload/product/file'), $filename);
-                $file = '/upload/product/file/' . $filename;
-            }
-            $pro->file = $file;
-        }
+        @unlink(public_path($pro->pic));
+        $pro->pic = $request->pic;
+        @unlink(public_path($pro->file));
+        $pro->file = $request->file;
         $pro->time = $request->time;
         $pro->desc = $request->desc;
         $pro->save();

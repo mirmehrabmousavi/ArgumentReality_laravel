@@ -37,11 +37,11 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">عکس</label>
-                        <input type="file" class="form-control" name="pic" id="exampleInputEmail1" placeholder="عکس" required>
+                        <input type="text" class="form-control" name="pic" id="exampleInputEmail1" placeholder="عکس" required>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">مدل</label>
-                        <input type="file" class="form-control" name="file" id="exampleInputEmail1" placeholder="مدل">
+                        <input type="text" class="form-control" name="file" id="exampleInputEmail1" placeholder="مدل">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">زمان انتظار</label>
