@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [\App\Http\Controllers\IndexController::class, 'index'])->name('index');
 Route::get('/code/1000{id}', [\App\Http\Controllers\IndexController::class, 'showCode'])->name('show.code');
-Route::get('/code/1000{id}/product/{proId}', [\App\Http\Controllers\IndexController::class, 'showAr'])->name('show.ar');
+//Route::get('/code/1000{id}/product/{proId}', [\App\Http\Controllers\IndexController::class, 'showAr'])->name('show.ar');
 Route::get('/product/1000{id}', [\App\Http\Controllers\IndexController::class, 'showProduct'])->name('show.product');
 
 Auth::routes();
