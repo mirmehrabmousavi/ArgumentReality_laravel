@@ -36,9 +36,9 @@
                             <td><img src="{{$val->pic}}" alt="" width="50" height="35"></td>
                             <td>{{$val->file}}</td>
                             <td>{{$val->time}}</td>
-                            <td>{{substr($val->desc,0,50)}}</td>
+                            <td>{{substr($val->desc,0,40)}}</td>
                             <td>
-                                <a href="{{Route('show.product', $val->id)}}" class="btn btn-success">نمایش</a>
+                                <a href="{{$val->url}}" class="btn btn-success">نمایش AR</a>
                                 <a href="{{Route('admin.editProduct', $val->id)}}" class="btn btn-primary"><i class="fa fa-edit"></i> ویرایش</a>
                                 <a class="btn btn-danger" href="{{ route('admin.deleteProduct',['id' => $val->id]) }}" onclick="event.preventDefault();
                                                      document.getElementById('del').submit();"><i class="fa fa-remove"></i> حذف</a>

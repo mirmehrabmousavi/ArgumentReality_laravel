@@ -22,7 +22,7 @@ class CreateProductsTable extends Migration
             $table->string('file');
             $table->string('time');
             $table->text('desc');
-            $table->integer('qrcode')->default(0);//0 it means do not have qrcode
+            $table->text('url');
             $table->timestamps();
         });
     }

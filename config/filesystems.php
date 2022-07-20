@@ -36,6 +36,12 @@ return [
             'url' => env('APP_URL').'/upload',
         ],
 
+        'ArgumentReality' => [
+            'driver' => 'local',
+            'root' => public_path('/ArgumentReality'),
+            'url' => env('APP_URL').'/ArgumentReality',
+        ],
+
         'local' => [
             'driver' => 'local',
             'root' => public_path('/'),

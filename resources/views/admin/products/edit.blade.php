@@ -38,12 +38,12 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">عکس</label>
-                        <input type="text" class="form-control" name="pic" id="exampleInputEmail1" placeholder="عکس">
+                        <input type="text" class="form-control" name="pic" id="exampleInputEmail1" placeholder="عکس" value="{{$pro->pic}}">
                         <img src="{{$pro->pic}}" alt="" width="50" height="50">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">مدل</label>
-                        <input type="text" class="form-control" name="file" id="exampleInputEmail1" placeholder="مدل">
+                        <input type="text" class="form-control" name="file" id="exampleInputEmail1" placeholder="مدل" value="{{$pro->file}}">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">زمان انتظار</label>

@@ -74,7 +74,7 @@
                             <h4 class="mr-1">{{$val->price}} تومان</h4><span class="strike-text">{{$val->price+10000}} تومان</span>
                         </div>
                         <div class="d-flex flex-column mt-4">
-                            <a class="btn btn-primary btn-sm" href="{{route('show.ar',['proId' => $val->id,'id' => $code->id])}}">نمایش AR</a>
+                            <a class="btn btn-primary btn-sm" href="{{$val->url}}">نمایش AR</a>
                             <a class="btn btn-outline-primary btn-sm mt-2" href="#">خرید</a>
                         </div>
                     </div>
