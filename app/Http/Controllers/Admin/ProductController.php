@@ -37,6 +37,47 @@ class ProductController extends Controller
         ]);
 
         $pro = new Product();
+
+        $fileHtml = '<!DOCTYPE html>
+<html>
+<script src="arasset/libs/aframe-master.js"></script>
+<script src="arasset/libs/aframe-ar.js"></script>
+<script src="arasset/libs/aframe-extras.loaders.6.1.1.js"></script>
+<script src="https://kit.fontawesome.com/c9500776a0.js" crossorigin="anonymous"></script>
+<script src="arasset/misc/codeBtn.js"></script>
+<!-- load the marker config -->
+<script src="arasset/data/hiro_0_multi.js"></script>
+
+<script>
+    localStorage.setItem(\'ARjsMultiMarkerFile\', hiro_0_marker);
+</script>
+
+<body style="margin : 0px; overflow: hidden;">
+    <div style="position: fixed; top: 5%; z-index: 10; text-align: center; width: 100%">
+        <p>drone by <a href="https://sketchfab.com/3d-models/mech-drone-8d06874aac5246c59edb4adbe3606e0e">Willy Decarpentrie</a>
+            <a href="https://creativecommons.org/licenses/by/4.0/">(license)</a></p>
+    </div>
+
+    <a-scene embedded arjs="detectionMode: mono_and_matrix;">
+        <a-assets>
+            <a-asset-item id="drone-model" src="'.$request->file.'" crossorigin="anonymous">
+            </a-asset-item>
+        </a-assets>
+        <a-marker preset="area">
+            <a-gltf-model src="#drone-model" position="0 0.5 0" scale="0.005 0.005 0.005" rotation="0 180 0"
+                animation-mixer="clip: *;"></a-gltf-model>
+        </a-marker>
+        <a-entity camera></a-entity>
+    </a-scene>
+</body>
+<script>
+    // show-code button
+    setCodeBtnUrl("multimarkers/hiro_0_model.html");
+</script>
+</html>';
+
+        Storage::put('/ArgumentReality/'.trim($request->title).'.html', $fileHtml);
+
         $pro->title = $request->title;
         $pro->category_id = $request->category_id;
         $pro->price = $request->price;
@@ -44,49 +85,8 @@ class ProductController extends Controller
         $pro->file = $request->file;
         $pro->time = $request->time;
         $pro->desc = $request->desc;
+        $pro->url = env('APP_URL').'/ArgumentReality/'.trim($request->title).'.html';
         $pro->save();
-
-        $fileHtml = '
-            <!DOCTYPE html>
-            <html>
-            <script src="arasset/libs/aframe-master.js"></script>
-            <script src="arassetlibs/aframe-ar.js"></script>
-            <script src="arasset/libs/aframe-extras.loaders.6.1.1.js"></script>
-            <script src="https://kit.fontawesome.com/c9500776a0.js" crossorigin="anonymous"></script>
-            <script src="arasset/misc/codeBtn.js"></script>
-            <!-- load the marker config -->
-            <script src="arasset/data/hiro_0_multi.js"></script>
-
-            <script>
-                localStorage.setItem('ARjsMultiMarkerFile', hiro??_0_marker);
-            </script>
-
-            <body style="margin : 0px; overflow: hidden;">
-                <div style="position: fixed; top: 5%; z-index: 10; text-align: center; width: 100%">
-                    <p>drone by <a href="https://sketchfab.com/3d-models/mech-drone-8d06874aac5246c59edb4adbe3606e0e">Willy Decarpentrie</a>
-                        <a href="https://creativecommons.org/licenses/by/4.0/">(license)</a></p>
-                </div>
-
-                <a-scene embedded arjs="detectionMode: mono_and_matrix;">
-                    <a-assets>
-                        <a-asset-item id="drone-model" src="arasset/aframe/assets/models/mech_drone/scene.gltf" crossorigin="anonymous">
-                        </a-asset-item>
-                    </a-assets>
-                    <a-marker preset="area">
-                        <a-gltf-model src="#drone-model" position="0 0.5 0" scale="0.005 0.005 0.005" rotation="0 180 0"
-                            animation-mixer="clip: *;"></a-gltf-model>
-                    </a-marker>
-                    <a-entity camera></a-entity>
-                </a-scene>
-            </body>
-            <script>
-                // show-code button
-                setCodeBtnUrl("multimarkers/hiro_0_model.html");
-            </script>
-            </html>`
-        ';
-
-        $e =Storage::put('file.html', $fileHtml);
 
         $notification = [
             'message' => 'با موفقیت ذخیره شد',
@@ -113,6 +113,49 @@ class ProductController extends Controller
         ]);
 
         $pro = Product::findOrFail($id);
+
+
+        $fileHtml = '<!DOCTYPE html>
+<html>
+<script src="arasset/libs/aframe-master.js"></script>
+<script src="arasset/libs/aframe-ar.js"></script>
+<script src="arasset/libs/aframe-extras.loaders.6.1.1.js"></script>
+<script src="https://kit.fontawesome.com/c9500776a0.js" crossorigin="anonymous"></script>
+<script src="arasset/misc/codeBtn.js"></script>
+<!-- load the marker config -->
+<script src="arasset/data/hiro_0_multi.js"></script>
+
+<script>
+    localStorage.setItem(\'ARjsMultiMarkerFile\', hiro_0_marker);
+</script>
+
+<body style="margin : 0px; overflow: hidden;">
+    <div style="position: fixed; top: 5%; z-index: 10; text-align: center; width: 100%">
+        <p>drone by <a href="https://sketchfab.com/3d-models/mech-drone-8d06874aac5246c59edb4adbe3606e0e">Willy Decarpentrie</a>
+            <a href="https://creativecommons.org/licenses/by/4.0/">(license)</a></p>
+    </div>
+
+    <a-scene embedded arjs="detectionMode: mono_and_matrix;">
+        <a-assets>
+            <a-asset-item id="drone-model" src="'.$request->file.'" crossorigin="anonymous">
+            </a-asset-item>
+        </a-assets>
+        <a-marker preset="area">
+            <a-gltf-model src="#drone-model" position="0 0.5 0" scale="0.005 0.005 0.005" rotation="0 180 0"
+                animation-mixer="clip: *;"></a-gltf-model>
+        </a-marker>
+        <a-entity camera></a-entity>
+    </a-scene>
+</body>
+<script>
+    // show-code button
+    setCodeBtnUrl("multimarkers/hiro_0_model.html");
+</script>
+</html>';
+
+        Storage::delete('/ArgumentReality/'.trim($request->title).'.html');
+        Storage::put('/ArgumentReality/'.trim($request->title).'.html', $fileHtml);
+
         $pro->title = $request->title;
         $pro->category_id = $request->category_id;
         $pro->price = $request->price;
@@ -122,8 +165,8 @@ class ProductController extends Controller
         $pro->file = $request->file;
         $pro->time = $request->time;
         $pro->desc = $request->desc;
+        $pro->url = env('APP_URL').'/ArgumentReality/'.trim($request->title).'.html';
         $pro->save();
-
 
         $notification = [
             'message' => 'با موفقیت بروزرسانی شد',

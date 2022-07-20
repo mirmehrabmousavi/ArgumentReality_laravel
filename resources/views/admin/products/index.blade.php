@@ -36,7 +36,7 @@
                             <td><img src="{{$val->pic}}" alt="" width="50" height="35"></td>
                             <td>{{$val->file}}</td>
                             <td>{{$val->time}}</td>
-                            <td>{{substr($val->desc,0,40)}}</td>
+                            <td>{{$val->desc}}</td>
                             <td>
                                 <a href="{{$val->url}}" class="btn btn-success">نمایش AR</a>
                                 <a href="{{Route('admin.editProduct', $val->id)}}" class="btn btn-primary"><i class="fa fa-edit"></i> ویرایش</a>
