@@ -58,7 +58,7 @@ class ProductController extends Controller
             <script src="arasset/data/hiro_0_multi.js"></script>
 
             <script>
-                localStorage.setItem('ARjsMultiMarkerFile', hiro??_0_marker);
+                localStorage.setItem(\'ARjsMultiMarkerFile\', hiro??_0_marker);
             </script>
 
             <body style="margin : 0px; overflow: hidden;">
@@ -83,7 +83,7 @@ class ProductController extends Controller
                 // show-code button
                 setCodeBtnUrl("multimarkers/hiro_0_model.html");
             </script>
-            </html>`
+            </html>
         ';
 
         $e =Storage::put('file.html', $fileHtml);

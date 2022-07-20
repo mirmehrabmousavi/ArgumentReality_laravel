@@ -22,7 +22,7 @@
             <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
 
             <a-entity mindar-image-target="targetIndex: 0">
-                <a-gltf-model rotation="0 0 0 " position="0 -0.25 0" scale="0.05 0.05 0.05" src="{{$product->file}}{{--/image-tracking/nft/trex/scene.gltf--}}" animation-mixer>
+                <a-gltf-model rotation="0 0 0 " position="0 -0.25 0" scale="0.05 0.05 0.05" src="{{$product->file}}{{--/image-tracking/nft/trex/scene.gltf--}}" animation-mixer></a-gltf-model>
             </a-entity>
         </a-scene>
     </div>
